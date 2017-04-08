@@ -28,6 +28,7 @@ public class UserRegistry {
                     addNewUser();
                     break;
                 case 3:
+                    updateUser();
                     break;
                 case 4:
                     deleteUser();
@@ -86,4 +87,19 @@ public class UserRegistry {
         }
     }
 
+    private void updateUser(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Adja meg az ID-t!");
+        int id = scanner.nextInt();
+        System.out.println("Adja meg az új felhasználónevet!");
+        String newName = scanner.next();
+
+        for(int i = 0; i < users.length; ++i){
+            if (users[i].getId() == id){
+                users[i] = new User(newName);
+                break;
+            }
+        }
+    }
 }
