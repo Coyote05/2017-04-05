@@ -100,6 +100,9 @@ public class UserRegistry {
                 users[i] = new User(newName);
                 break;
             }
+            else{
+                System.out.println("Nem találtam ilyen ID-vel rendelkező felhasználót!");
+            }
         }
     }
 }
