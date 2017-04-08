@@ -33,6 +33,9 @@ public class UserRegistry {
                 case 4:
                     deleteUser();
                     break;
+                case 5:
+                    countUser();
+                    break;
                 case 0:
                     System.out.println("bye");
                     break;
@@ -50,6 +53,7 @@ public class UserRegistry {
         System.out.println("***   Add new User(2)  ***");
         System.out.println("***   Update User(3)   ***");
         System.out.println("***   Delete User(4)   ***");
+        System.out.println("***  Count Users (5)   ***");
         System.out.println("***      Exit (0)      ***");
         System.out.println("**************************");
     }
@@ -104,5 +108,17 @@ public class UserRegistry {
                 System.out.println("Nem találtam ilyen ID-vel rendelkező felhasználót!");
             }
         }
+    }
+
+    private int countUser(){
+        int result = 0;
+        for(int i = 0; i < users.length; ++i){
+            if(users[i] != null){
+                ++result;
+            }
+        }
+        System.out.println("A felhasználók száma: " + result);
+        System.out.println();
+        return result;
     }
 }
