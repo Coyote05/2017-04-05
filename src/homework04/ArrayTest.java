@@ -9,7 +9,9 @@ import java.util.Random;
 public class ArrayTest {
 
     private int[] array = new int[20];
+    private int[] index = new int[5];
     private int secondMaximum;
+    private int k;
 
     public void intArray(){
 
@@ -36,4 +38,42 @@ public class ArrayTest {
         }
         return secondMaximum;
     }
+
+    private int[][] matrix = new int[5][5];
+
+    public void initMatrix(){
+
+        Random random = new Random();
+        double matrixNumber;
+
+        for(int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix.length; ++j) {
+                matrixNumber = random.nextInt(0+1);
+                matrix[i][j] = (int)matrixNumber;
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void searchNotNullRows(){
+
+        for(int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix.length; ++j) {
+
+                    if (matrix[i][j] != 0) {
+                        index[i] = matrix[i][j];
+                        k = i;
+                        break;
+                    }
+                }
+            }
+        if(index[k] != 0){
+            System.out.print("Azoknak a soroknak az indexei, amiben van nullától különböző szám: " + Arrays.toString(index));
+        }
+        else{
+            System.out.println("Nem találtam nullától különböző elemet!");
+        }
+    }
 }
+

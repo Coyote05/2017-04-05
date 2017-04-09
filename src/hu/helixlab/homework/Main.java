@@ -12,5 +12,8 @@ public class Main {
         arrayTest.intArray();
         System.out.println();
         System.out.println("A második legnagyobb elem: " + arrayTest.getSecondHighest());
+        System.out.println();
+        arrayTest.initMatrix();
+        arrayTest.searchNotNullRows();
     }
 }
