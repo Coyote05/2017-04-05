@@ -10,7 +10,8 @@ public class ArrayTest {
 
     private int[] array = new int[20];
     private int[] index = new int[5];
-    private int secondMaximum;
+    private int maximum = 0;
+    private int secondMaximum = 0;
     private int k;
 
     public void intArray(){
@@ -27,13 +28,17 @@ public class ArrayTest {
 
     public int getSecondHighest() {
 
-        Arrays.sort(array);
         System.out.println("A tömbben lévő elemek: " + Arrays.toString(array));
 
-        for (int i = 19; i < array.length; --i) {
-            if (array[i] != array[i - 1]) {
-                secondMaximum = array[i - 1];
-                break;
+        for(int i = 0; i < 19; ++i){
+
+            if(array[i] > maximum){
+
+                secondMaximum = maximum;
+                maximum = array[i];
+            }
+            else if(array[i] > secondMaximum && array[i] != maximum){
+                secondMaximum = array[i];
             }
         }
         return secondMaximum;
