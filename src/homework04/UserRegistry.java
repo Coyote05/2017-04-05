@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class UserRegistry {
 
+    PasswordGenerator passwordGenerator = new PasswordGenerator();
     private User[] users;
+    int notFound;
 
     public UserRegistry(){
         this.users = new User[10];
@@ -100,13 +102,18 @@ public class UserRegistry {
         String newName = scanner.next();
 
         for(int i = 0; i < users.length; ++i){
-            if (users[i].getId() == id){
-                users[i] = new User(newName);
-                break;
+            if(users[i] != null) {
+                if (users[i].getId() == id) {
+                    users[i].setUsername(newName);
+                    users[i].setPassword(passwordGenerator.generatePassword(8));
+                    break;
+                } else {
+                    notFound = 1;
+                }
             }
-            else{
-                System.out.println("Nem találtam ilyen ID-vel rendelkező felhasználót!");
-            }
+        }
+        if(notFound == 1){
+            System.out.println("Nem találtam ilyen ID-vel rendelkező felhasználót!");
         }
     }
 
