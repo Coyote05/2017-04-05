@@ -30,7 +30,7 @@ public class ArrayTest {
 
         System.out.println("A tömbben lévő elemek: " + Arrays.toString(array));
 
-        for(int i = 0; i < 19; ++i){
+        for(int i = 0; i < array.length; ++i){
 
             if(array[i] > maximum){
 
