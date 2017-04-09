@@ -117,7 +117,7 @@ public class UserRegistry {
         }
     }
 
-    private int countUser(){
+    private void countUser(){
         int result = 0;
         for(int i = 0; i < users.length; ++i){
             if(users[i] != null){
@@ -126,6 +126,5 @@ public class UserRegistry {
         }
         System.out.println("A felhasználók száma: " + result);
         System.out.println();
-        return result;
     }
 }
