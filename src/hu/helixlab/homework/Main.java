@@ -8,6 +8,9 @@ public class Main {
 
         UserRegistry userRegistry = new UserRegistry();
         userRegistry.run();
-
+        ArrayTest arrayTest = new ArrayTest();
+        arrayTest.intArray();
+        System.out.println();
+        System.out.println("A második legnagyobb elem: " + arrayTest.getSecondHighest());
     }
 }
