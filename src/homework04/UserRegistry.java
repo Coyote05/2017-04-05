@@ -88,6 +88,7 @@ public class UserRegistry {
             if (users[i] != null) {
                 if (users[i].getId() == id) {
                     users[i] = null;
+
                 }
             }
         }
