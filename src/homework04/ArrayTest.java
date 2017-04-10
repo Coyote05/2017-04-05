@@ -13,16 +13,17 @@ public class ArrayTest {
     private int maximum = 0;
     private int secondMaximum = 0;
     private int k;
+    private int randomMin = -10;
+    private int randomMax = 20;
 
     public void intArray(){
 
-        Random random = new Random();
-
-        int number;
+        int randomNumber;
 
         for(int i = 0; i < array.length; ++i){
-            number = random.nextInt(-10+20);
-            array[i] = number;
+
+            randomNumber = randomMin + (int)(Math.random() * ((randomMax - randomMin) + 1));
+            array[i] = randomNumber;
         }
     }
 
