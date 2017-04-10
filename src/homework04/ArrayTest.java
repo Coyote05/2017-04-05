@@ -53,7 +53,7 @@ public class ArrayTest {
 
         for(int i = 0; i < matrix.length; ++i) {
             for (int j = 0; j < matrix.length; ++j) {
-                matrixNumber = random.nextInt(0+1);
+                matrixNumber = random.nextInt(2);
                 matrix[i][j] = (int)matrixNumber;
                 System.out.print(matrix[i][j] + " ");
             }
@@ -65,9 +65,8 @@ public class ArrayTest {
 
         for(int i = 0; i < matrix.length; ++i) {
             for (int j = 0; j < matrix.length; ++j) {
-
                     if (matrix[i][j] != 0) {
-                        index[i] = matrix[i][j];
+                        index[i] = i;
                         k = i;
                         break;
                     }
